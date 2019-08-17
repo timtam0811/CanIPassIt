@@ -49,12 +49,56 @@ button, input, select, textarea {
 label{
     background-color: rgb(0, 153, 255);
     color: white;
+    padding:20px;
+}
+#select-question-wrapper{
+    position: relative;
+    width:50vw;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:30px;
+}
+
+#select-question-wrapper:before{
+    z-index: 1;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* content: "\f123"; */
+    content:"\f3d0";
+    font-family: "IonIcons";
+    line-height: 43px;
+    color: #7F878C;
+    pointer-events: none;
 }
 
 #select-question{
+    width:50vw;
     font-size:1.4em;
-    margin-top:30px;
+    /* margin-top:30px; */
+    /* box-shadow: 5px 5px 5px gray; */
+    padding:20px 40px;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    background-color: rgb(175, 223, 255);
+    -webkit-appearance: none;/* ベンダープレフィックス(Google Chrome、Safari用) */
+    -moz-appearance: none;	/* ベンダープレフィックス(Firefox用) */
+    appearance: none;	/* 標準のスタイルを無効にする */ 
+    transition-property: box-shadow,border-radius;
+    transition-duration: 400ms;
+}
+
+#select-question:focus{
+    outline: none;
+}
+
+#select-question:hover{
     box-shadow: 5px 5px 5px gray;
+    border-radius: 0px;
+    transition-property: box-shadow,border-radius;
+    transition-duration: 400ms;
 }
 
 #answer-text{
@@ -62,10 +106,30 @@ label{
     margin-left: auto;
     margin-right: auto;
     width:70vw;
-    box-shadow: 5px 5px 5px gray ;
-    /* height:100vh; */
+    /* box-shadow: 5px 5px 5px gray ; */
+}
+
+#submit-button{
+    font-size:1.8em;
+    padding:20px;
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(175, 223, 255);
+    transition-property: box-shadow,border-radius;
+    transition-duration: 400ms;
+    
+}
+
+#submit-button:hover{
+    appearance: none;
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 0px;
+    transition-property: box-shadow,border-radius;
+    transition-duration: 400ms;
+    /* background-color:red; */
 }
 
 .form-item-wrapper{
     margin-top: 50px;
 }
+
