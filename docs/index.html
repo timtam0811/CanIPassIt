@@ -2,7 +2,10 @@
     <link rel="stylesheet" type="text/css" href="./esa_style.css">
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
 </head>
 <body>
     <title>CanIPassIt</title>
@@ -16,7 +19,7 @@
     <div id="form-wrapper">
         <form id="main-form" action="" method="post">
             <div class="form-item-wrapper">
-                <label class="form-label sel"><p class="form-label-p">Select Question</p></label>
+                <label class="form-label"><p class="form-label-p">Select Question</p></label>
                 <div id="select-question-wrapper">
                     <select id="select-question">
                         <option>Query1</option>
@@ -28,14 +31,23 @@
             </div>
             <div style="height:100px"></div>
             <div class="form-item-wrapper">
-                <label class="form-label ans"><p class="form-label-p">Enter Your Answer</p></label>
+                <label class="form-label"><p class="form-label-p">Enter Your Answer</p></label>
                 <textarea id="answer-text" cols="40" rows="20">default text ここに内容を記載</textarea>
             </div>
             <div style="margin-top:50px">  
-                <button id="submit-button" type="button">Submit</button>
+                <button id="submit-button" type="button" class="action-button">Submit</button>
             </div>
             <!-- <ion-icon name="arrow-dropdown"></ion-icon> -->
-        </form> 
+        </form>
+        <div id="result-div">
+            <div class="form-item-wrapper">
+                <label class="form-label"><p class="form-label-p">Result</p></label>
+                <h1 id="question-result">query</h1>
+                <p id="answer-result">answer</p>
+                <button id="return-button" type="button" class="action-button">Back</button>
+            </div>
+        </div>
     </div>
 <!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
+<script src="./esa_script.js"></script>
 </body>

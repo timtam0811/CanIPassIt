@@ -3,6 +3,9 @@ body{
     font-size:1.3em;
     /* background-image: url(https://picsum.photos/id/519/1980/1080?grayscale); */
     /* background-color: #93f2ff */
+    overflow-x: hidden;
+    padding:0;
+    margin:0;
 }
 
 button, input, select, textarea {
@@ -39,12 +42,31 @@ button, input, select, textarea {
     background-color: rgb(175, 223, 255);
 }
 
+
 #form-wrapper{
-    display: block;
+    /* display: inline; */
+    left:0px;
+    display:flex;
+    flex-wrap: nowrap;
+    width: 200vw;
     position: relative;
-    width:98vw;
     text-align: center;
+    transition-property: left;
+    transition: 500ms;
 }
+
+#form-wrapper.result{
+    left:-100vw;
+    transition-property: left;
+    transition: 500ms;
+}
+
+#main-form{
+    display:inline-block;
+    /* display:flexbox; */
+    width:100vw;
+}
+
 
 .form-label{
     background-color: rgb(0, 153, 255);
@@ -60,23 +82,21 @@ button, input, select, textarea {
 
 .form-label-p{
     position: relative;
-    /* z-index: 9; */
     margin:0;
 }
 
 .form-label:before{
     display: block;
     position: absolute;
-    /* position: relative; */
-    /* margin:-40px -20px; */
     top:-10px;
     left:0;
     content:" ";
     opacity:0;
-    width:98vw;
+    width:100vw;
     height:0;
     background-color: rgb(155, 155, 155);
-    /* z-index:-1; */
+    transition-property: height, top, opacity,background-color;
+    transition-duration: 200ms;
 }
 
 .form-label:hover:before{
@@ -89,7 +109,7 @@ button, input, select, textarea {
     content:"\f3d0                \f3d0";
     font-family: "IonIcons";
     font-size:2em;
-    background-color: rgba(155, 155, 155, 0.199);
+    background-color: rgba(155, 155, 155, 0.185);
 }
 
 #select-question-wrapper{
@@ -150,11 +170,11 @@ button, input, select, textarea {
     /* box-shadow: 5px 5px 5px gray ; */
 }
 
-#submit-button{
-    font-size:1.8em;
+.action-button{
+    font-size:2em;
     font-weight: bold;
-    padding:20px;
-    border-radius: 40px;
+    padding:40px 80px;
+    border-radius: 60px;
     border: none;
     background-color: rgb(175, 223, 255);
     transition-property: box-shadow,border-radius;
@@ -162,7 +182,7 @@ button, input, select, textarea {
     
 }
 
-#submit-button:hover{
+.action-button:hover{
     appearance: none;
     box-shadow: 5px 5px 5px gray;
     border-radius: 0px;
@@ -175,3 +195,24 @@ button, input, select, textarea {
     margin-top: 50px;
 }
 
+#result-div{
+    display:inline-block;
+    /* display: flexbox; */
+    width:100vw;
+    right:-100%;
+}
+
+#answer-result{
+    margin:50px;
+    padding:20px;
+    background-color: rgb(175, 223, 255);
+    font-size:1em;
+    text-align: left;
+}
+
+#answer-result:before{
+    white-space: pre-wrap;
+    content:"--Analysis report--\a\a";
+    font-size:1.2em;
+    font-weight:bold;
+}
