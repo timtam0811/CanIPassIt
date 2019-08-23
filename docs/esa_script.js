@@ -24,3 +24,5 @@ function return_answer(){
 
 document.getElementById("submit-button").addEventListener("click",submit);
 document.getElementById("return-button").addEventListener("click",return_answer);
+//prevent iOS scroll
+document.addEventListener('touchmove', function(e) {e.preventDefault();}, {passive: false});
