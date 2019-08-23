@@ -1,5 +1,7 @@
 function submit(){
-    document.getElementById("form-wrapper").classList.add("result");
+    // document.getElementById("form-wrapper").classList.add("result");
+    document.getElementById("result-div").classList.add("result");
+    document.getElementById("main-form").classList.add("result");
     $("body").scrollTop(0);
     
     var query=document.getElementById("select-question");
@@ -18,11 +20,11 @@ function submit(){
 }
 
 function return_answer(){
-    document.getElementById("form-wrapper").classList.remove("result");
+    // document.getElementById("form-wrapper").classList.remove("result");
+    document.getElementById("result-div").classList.remove("result");
+    document.getElementById("main-form").classList.remove("result");
     $("body").scrollTop(0);
 }
 
 document.getElementById("submit-button").addEventListener("click",submit);
 document.getElementById("return-button").addEventListener("click",return_answer);
-//prevent iOS scroll
-document.addEventListener('touchmove', function(e) {e.preventDefault();}, {passive: false});

@@ -46,9 +46,10 @@ button, input, select, textarea {
 #form-wrapper{
     /* display: inline; */
     left:0px;
-    display:flex;
+    /* display:flex; */
+    display:block;
     flex-wrap: nowrap;
-    width: 200vw;
+    width: 100vw;
     position: relative;
     text-align: center;
     transition-property: left;
@@ -62,9 +63,37 @@ button, input, select, textarea {
 }
 
 #main-form{
-    display:inline-block;
+    /* display:inline-block; */
     /* display:flexbox; */
+    position:absolute;
+    left:0;
+    top:0;
     width:100vw;
+    transition:400ms;
+}
+
+#main-form.result{
+    width:0;
+    opacity:0;
+    transition:400ms;
+}
+
+#result-div{
+    /* display:inline-block; */
+    /* display: flexbox; */
+    position:absolute;
+    width:0;
+    top:0;
+    left:100vw;
+    transition:400ms;
+    opacity:0;
+}
+
+#result-div.result{
+    left:0;
+    width:100vw;
+    opacity:1;
+    transition:400ms;
 }
 
 
@@ -193,13 +222,6 @@ button, input, select, textarea {
 
 .form-item-wrapper{
     margin-top: 50px;
-}
-
-#result-div{
-    display:inline-block;
-    /* display: flexbox; */
-    width:100vw;
-    right:-100%;
 }
 
 #answer-result{
